@@ -82,10 +82,9 @@ for w_idx, w in enumerate(workloads):
         # Legend
         st.markdown("""
 ### Legend — Unified Grayscale Mapping  
-- **0 (Darkest)** → Highest power / load / local-heavy  
-- **3 (Lightest)** → Lowest power / offload-friendly  
+- **0 (Darkest)** → Highest power / Fastser 
+- **3 (Lightest)** → Lowest power / Slower  
 
-Same scale applied to **CPU**, **Memory**, and **Offloading**.
 """)
 
         # Locate task directory
@@ -102,7 +101,7 @@ Same scale applied to **CPU**, **Memory**, and **Offloading**.
         fig, axes = plt.subplots(3, 5, figsize=(22, 6))
         fig.tight_layout(pad=3)
 
-        row_labels = ["CPU", "MEM", "OFFL"]   # ← 추가
+        row_labels = ["CPU", "MEM", "OFFLOADING"]   # ← 추가
 
         # Fill columns by algorithm
         for col, algo in enumerate(algorithms):
@@ -123,7 +122,7 @@ Same scale applied to **CPU**, **Memory**, and **Offloading**.
         # ← 여기: 각 row의 맨 왼쪽에 레이블 추가
         for r in range(3):
             axes[r][0].set_ylabel(row_labels[r],
-                                fontsize=14,
+                                fontsize=20,
                                 rotation=0,     # 가로 텍스트
                                 labelpad=40,    # strip에서 40px 왼쪽
                                 va='center')
