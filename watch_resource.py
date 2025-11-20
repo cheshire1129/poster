@@ -124,6 +124,6 @@ for w_idx, w in enumerate(workloads):
             axes[r][0].set_ylabel(row_labels[r],
                                 fontsize=20,
                                 rotation=0,     # 가로 텍스트
-                                labelpad=60,    # strip에서 40px 왼쪽
+                                labelpad=80,    # strip에서 40px 왼쪽
                                 va='center')
         st.pyplot(fig)
